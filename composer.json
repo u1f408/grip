@@ -1,0 +1,22 @@
+{
+    "type": "project",
+    "private": true,
+    "autoload": {
+        "psr-4": {
+            "Grip\\": "lib/",
+            "GripExt\\": "ext/"
+        }
+    },
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.5",
+        "psr/log": "1.*",
+        "michelf/php-markdown": "^1.9",
+        "middlewares/trailing-slash": "^2.0",
+        "vlucas/phpdotenv": "^5.4",
+        "ext-curl": "*",
+        "ext-yaml": "*",
+        "u1f408/phphelpers": "^0.1.1",
+        "twig/twig": "^3.0"
+    }
+}

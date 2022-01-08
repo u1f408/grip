@@ -1,0 +1,13 @@
+<section class="PluralKitSource--system" data-system="{{ system.id }}">
+	<h1 class="PluralKitSource--system--name">{{ system.name }}</h1>
+
+	<ul class="PluralKitSource--members">
+	{% for memberid, member in system.members %}
+		<li class="PluralKitSource--member" data-member="{{ memberid }}">
+			<strong class="PluralKitSource--member--name">{{ member.name }}</strong>
+			<span class="PluralKitSource--member--pronouns">{{ member.pronouns }}</span>
+			<div class="PluralKitSource--member--description">{{ member.description | raw }}</div>
+		</li>
+	{% endfor %}
+	</ul>
+</section>
