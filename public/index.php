@@ -13,6 +13,9 @@ if (php_sapi_name() === 'cli-server') {
 define("BASE_PATH", dirname(dirname(($p = realpath(__FILE__)) === false ? __FILE__ : $p)));
 require_once(BASE_PATH . "/vendor/autoload.php");
 
+// Load environment from dotenv, if present
+($dotenv = \Dotenv\Dotenv::createMutable(BASE_PATH))->safeLoad();
+
 // Load configuration
 \Grip\Configuration::load();
 
