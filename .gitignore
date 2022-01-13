@@ -1,2 +1,6 @@
 /vendor
 /site
+/.env
+/.env.*
+!/.env.dist
+!/.env.ci
