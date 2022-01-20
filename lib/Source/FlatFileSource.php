@@ -53,16 +53,16 @@ class FlatFileSource extends Source {
 		// Parse out the file metadata
 		$split_content = true;
 		$metadata = yaml_parse($raw_content, 0);
-		if ($metadata === false) {
+		if (!is_array($metadata)) {
 			$split_content = false;
 			$metadata = [];
 		}
 
 		// Split raw_content to get the file content after the metadata
 		$content = $raw_content;
-		if ($split_content) {
+		if ($split_content === true) {
 			[$_, $__, $content] = explode("---\n", $content, 3);
-			$content = trim($content);
+			$content = trim($content ?? "");
 		}
 
 		// Return created PageEntry
