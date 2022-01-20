@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+	<title>Exception: {{ exception.title }}</title>
+</head>
+<body class="error-page">
+	<h1>{{ exception.title }}</h1>
+	<p>{{ exception.getMessage }}</p>
+
+	{% if displayErrorDetails %}
+		<p>
+			Exception code <code>{{ exception.getCode }}</code>
+			in file <code>{{ exception.getFile }}</code>
+			on line <code>{{ exception.getLine }}</code>
+		</p>
+
+		<pre><code>{{ exception.getTraceAsString }}</code></pre>
+	{% endif %}
+</body>
+</html>
